@@ -26,7 +26,8 @@ E_DELAY = 0.0005
 # I2C
 bus = smbus.SMBus(1)
 
-# Functions(Refer - http://osoyoo.com/driver/i2clcda.py)
+# LCD Display Functions
+# Refer: http://osoyoo.com/driver/i2clcda.py
 def lcd_init():
   lcd_byte(0x33,LCD_CMD)
   lcd_byte(0x32,LCD_CMD)
@@ -63,7 +64,8 @@ def lcd_clear():
   lcd_string("                ", LCD_LINE_1)
   lcd_string("                ", LCD_LINE_2)
 
-## LCD1602 カタカナ Display(Refer - https://ppdr.softether.net/osoyoo-i2c1602lcd)
+# LCD1602 KATAKANA(カタカナ) Display Function
+# Refer: https://ppdr.softether.net/osoyoo-i2c1602lcd
 def lcd_string_kana(message,line):
   codes = u'線線線線線線線線線線線線線線線線　　　　　　　　　　　　　　　　!"#$%&`()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}→←　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　。「」、・ヲァィゥェォャュョッーアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン゛゜αäβεμσρq√陰ι×￠￡nöpqθ∞ΩüΣπxν千万円÷　塗'
   dic ={u'ガ':u'カ゛',u'ギ':u'キ゛',u'グ':u'ク゛',u'ゲ':u'ケ゛',u'ゴ':u'コ゛',u'ザ':u'サ゛',u'ジ':u'シ゛',u'ズ':u'ス゛',u'ゼ':u'セ゛',u'ゾ':u'ソ゛',u'ダ':u'タ゛',u'ヂ':u'チ゛',u'ヅ':u'ツ゛',u'デ':u'テ゛',u'ド':u'ト゛',u'バ':u'ハ゛',u'ビ':u'ヒ゛',u'ブ':u'フ゛',u'ベ':u'ヘ゛',u'ボ':u'ホ゛',u'パ':u'ハ゜',u'ピ':u'ヒ゜',u'プ':u'フ゜',u'ペ':u'ヘ゜',u'ポ':u'ホ゜',u'℃':u'゜C'}
